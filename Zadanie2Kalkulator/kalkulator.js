@@ -20,4 +20,4 @@ console.log("Podaj liczbę a: ")
 const a = 30
 const b = 30
 
-console.log()
+console.log(a)
