@@ -15,9 +15,10 @@ class Calculator{
         return a / b
     }
 }
+const dzialania = new Calculator()
+dzialania.add(12, 34)
+dzialania.divide(12, 34)
+dzialania.multiply(12, 34)
 
-console.log("Podaj liczbę a: ")
-const a = 30
-const b = 30
-
-console.log(a)
+console.log(dzialania.substruct(12, 34)
+)
