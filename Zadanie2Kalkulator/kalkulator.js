@@ -1,23 +1,20 @@
 class Calculator{
     add(a, b){
-        return a + b
+        console.log(`Po dodaniu ${a} do ${b} wynik to: ${a+b}`)
     }
 
     substruct(a, b){
-        return a - b
+        console.log(`Po odjeciu ${a} od ${b} wynik to: ${a-b}`)
     }
 
     multiply(a, b){
-        return a * b
+        console.log(`Po pomnozeniu ${a} do ${b} wynik to: ${a*b}`)
     }
 
     divide(a, b){
-        return a / b
+        console.log(`Po podzieleniu ${a} do ${b} wynik to: ${a/b}`)
     }
 }
 const dzialania = new Calculator()
-dzialania.add(12, 34)
-dzialania.divide(12, 34)
-dzialania.multiply(12, 34)
 
-console.log(dzialania.substruct(12, 34))
+dzialania.add(12, 34)
