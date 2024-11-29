@@ -1,7 +1,6 @@
-const znaki = ["!", "@", "#", "$", "%", "^", "&", "*", "?"]
 const myReverse = (text) => text.split('').reverse('').join('')
 const myUpperCase = (text) => text.toUpperCase()
-const myRemove = (text) => text.split('')
+const myRemove = (text) => text.replace(/[^a-zA-Z0-9\s]/g, "")//to cos usuwa wszytkie inne znaki niz spacje, cyfry i litery
 
 const processText = (text, { 
     isReversed = false, 
@@ -19,29 +18,19 @@ const processText = (text, {
         result = myUpperCase(result)
     }
 
-    if(isRemoved){
-        let ciagZnakow = text.split()
-        for(i = 0; i <= ciagZnakow.length; i++){
-            znaki.forEach(znak => {
-                if(znak == ciagZnakow[i])
-                {
-                    ciagZnakow.splice(i,2)
-                }
-            });
-        }
-        ciagZnakow.join('')
-        console.log(ciagZnakow)
+    if (isRemoved){
+        result = myRemove(text)
     }
 
     return `przetworzony tekst: ${result}`
 } 
 
-const text = "kor!nel"
+const text = "k@o#r!n%e*l"
 
 const options ={
-    isReversed: false,
-    isUperrCased: false,
-    isRemoved: true
+    isReversed: true,
+    isUperrCased: true,
+    isRemoved: false
 }
 
 console.log(processText(text, options))
