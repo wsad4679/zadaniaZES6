@@ -10,7 +10,7 @@ const products = [
 
   class Filtering{
       static filterByCategory(categoryName){
-          const filteredProducts = products.filter(product => product.category === categoryName)
+          let filteredProducts = products.filter(product => product.category === categoryName)
           filteredProducts.forEach(product => {
             console.log(`Nazwa: ${product.name} Cena: ${product.price} Kategoria: ${product.category}`)
           });
@@ -19,11 +19,20 @@ const products = [
       static filterByPrice(lowPrice, maxPrice){
         
         let filteredProducts = products.filter(product => lowPrice<=product.price && product.price<=maxPrice)
-        console.log("Zfiltrowane produkty: ")
+        console.log("Przefiltrowane produkty:")
         filteredProducts.forEach(product=>{
           console.log(`Nazwa: ${product.name} Cena: ${product.price} Kategoria: ${product.category}`)
         })
         
+      }
+
+      static filterByBoth(categoryName, lowPrice, maxPrice){
+        let filteredProductsByPrice = products.filter(product => lowPrice<=product.price && product.price<=maxPrice)
+        let filteredProducts = filteredProductsByPrice.filter(product => product.category === categoryName)
+        console.log("Przefiltrowane produkty:")  
+        filteredProducts.forEach(product => {
+            console.log(`Nazwa: ${product.name} Cena: ${product.price} Kategoria: ${product.category}`)
+          });
       }
 
 
@@ -32,5 +41,8 @@ const products = [
   }
 
   Filtering.filterByCategory("Fruits")
+  console.log("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
   Filtering.filterByPrice(1, 2)
+  console.log("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
+  Filtering.filterByBoth("Fruits", 0, 1.5)
 
