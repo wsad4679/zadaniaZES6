@@ -19,16 +19,13 @@ class Cart{
 
     removeProduct(productName){
         let i = 0
-        let d = 0
         this.list.forEach(product => {
-            i++
             if (product.name == productName)
                 {
-                    i = d
+                    this.list.splice(i,1)
                 }
+            i++
         });
-
-        this.list.splice(d,1)
     }
 
 
