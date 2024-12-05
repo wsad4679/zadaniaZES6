@@ -18,14 +18,17 @@ class Cart{
     }
 
     removeProduct(productName){
-        let i = 0
-        this.list.forEach(product => {
-            if (product.name == productName)
-                {
-                    this.list.splice(i,1)
-                }
-            i++
-        });
+        // let i = 0
+        // this.list.forEach(product => {
+        //     console.log(i)
+        //     if (product.name == productName)
+        //         {
+        //             this.list.splice(i,1)
+        //         }
+        //     i++
+        // });
+
+        this.list = this.list.filter(product => product.name !== productName)
     }
 
 
@@ -33,6 +36,11 @@ class Cart{
 
 const lista = new Cart()
 
+lista.addProduct({name: 'Jabko', price: 12, quantity: 1})
+lista.addProduct({name: 'Jabko', price: 12, quantity: 1})
+lista.addProduct({name: 'Jabko', price: 12, quantity: 1})
+lista.addProduct({name: 'Jabko', price: 12, quantity: 1})
+lista.addProduct({name: 'Jabko', price: 12, quantity: 1})
 lista.addProduct({name: 'Jabko', price: 12, quantity: 1})
 lista.addProduct({name: 'Jabko', price: 12, quantity: 1})
 lista.addProduct({name: 'Jabko', price: 12, quantity: 1})
