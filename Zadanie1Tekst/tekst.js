@@ -19,7 +19,7 @@ const processText = (text, {
     }
 
     if (isRemoved){
-        result = myRemove(text)
+        result = myRemove(result)
     }
 
     return `przetworzony tekst: ${result}`
@@ -30,7 +30,7 @@ const text = "k@o#r!n%e*l"
 const options ={
     isReversed: true,
     isUperrCased: true,
-    isRemoved: false
+    isRemoved: true
 }
 
 console.log(processText(text, options))
